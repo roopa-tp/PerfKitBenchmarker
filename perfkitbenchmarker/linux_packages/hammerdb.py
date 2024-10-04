@@ -41,13 +41,15 @@ HAMMERDB_SCRIPT_TPC_H = 'tpc_h'
 HAMMERDB_SCRIPT_TPC_C = 'tpc_c'
 
 MINUTES_TO_MS = 60 * 1000
-HAMMERDB_4_0 = '4.0'
-HAMMERDB_4_3 = '4.3'
-HAMMERDB_4_5 = '4.5'
+HAMMERDB_4_0  = '4.0'
+HAMMERDB_4_3  = '4.3'
+HAMMERDB_4_5  = '4.5'
+HAMMERDB_4_12 = '4.12'
 
-TAR_4_0 = f'HammerDB-{HAMMERDB_4_0}-Linux.tar.gz'
-TAR_4_3 = f'HammerDB-{HAMMERDB_4_3}-Linux.tar.gz'
-TAR_4_5 = f'HammerDB-{HAMMERDB_4_5}-Linux.tar.gz'
+TAR_4_0  = f'HammerDB-{HAMMERDB_4_0}-Linux.tar.gz'
+TAR_4_3  = f'HammerDB-{HAMMERDB_4_3}-Linux.tar.gz'
+TAR_4_5  = f'HammerDB-{HAMMERDB_4_5}-Linux.tar.gz'
+TAR_4_12 = f'HammerDB-{HAMMERDB_4_12}-Linux.tar.gz'
 
 TPCH_TABLES = [
     'customer',
@@ -62,22 +64,25 @@ TPCH_TABLES = [
 
 PACKAGE_NAME = 'hammerdb'
 PREPROVISIONED_DATA = {
-    TAR_4_0: '9274d8158ba0830e5aafa9263fd865cf61163a0b2c190dfad4d4bf1b61bd6c90',
-    TAR_4_3: '2ac41b83427e5aeb4bfa081de5d4d9a68aa4ecb75949214306d0436aea7ae9e0',
-    TAR_4_5: 'af9fd885afa15c6bcff8c81d8ca05485992f6519ee714f923466382447e2c754',
+    TAR_4_0:  '9274d8158ba0830e5aafa9263fd865cf61163a0b2c190dfad4d4bf1b61bd6c90',
+    TAR_4_3:  '2ac41b83427e5aeb4bfa081de5d4d9a68aa4ecb75949214306d0436aea7ae9e0',
+    TAR_4_5:  'af9fd885afa15c6bcff8c81d8ca05485992f6519ee714f923466382447e2c754',
+    TAR_4_12: '9274d8158ba0830e5aafa9263fd865cf61163a0b2c190dfad4d4bf1b61bd6c90',
 }
 BASE_URL = 'https://github.com/TPC-Council/HammerDB/releases/download/'
 PACKAGE_DATA_URL = {
-    TAR_4_0: f'{BASE_URL}v{HAMMERDB_4_0}/{TAR_4_0}',
-    TAR_4_3: f'{BASE_URL}v{HAMMERDB_4_3}/{TAR_4_3}',
-    TAR_4_5: f'{BASE_URL}v{HAMMERDB_4_5}/{TAR_4_5}',
+    TAR_4_0:  f'{BASE_URL}v{HAMMERDB_4_0}/{TAR_4_0}',
+    TAR_4_3:  f'{BASE_URL}v{HAMMERDB_4_3}/{TAR_4_3}',
+    TAR_4_5:  f'{BASE_URL}v{HAMMERDB_4_5}/{TAR_4_5}',
+    TAR_4_12: f'{BASE_URL}v{HAMMERDB_4_12}/{TAR_4_12}',
 }
 
 
 MAP_VERSION_TO_INSTALL_FILE_NAME = {
-    HAMMERDB_4_0: 'install_hammerdb_4_0.sh',
-    HAMMERDB_4_3: 'install_hammerdb_4_3.sh',
-    HAMMERDB_4_5: 'install_hammerdb_4_5.sh',
+    HAMMERDB_4_0:  'install_hammerdb_4_0.sh',
+    HAMMERDB_4_3:  'install_hammerdb_4_3.sh',
+    HAMMERDB_4_5:  'install_hammerdb_4_5.sh',
+    HAMMERDB_4_12: 'install_hammerdb_4_12.sh',
 }
 
 MAP_SCRIPT_TO_DATABASE_NAME = {
@@ -110,9 +115,9 @@ RESTORABLE = 'restorable'
 HAMMERDB_VERSION = flags.DEFINE_enum(
     'hammerdbcli_version',
     HAMMERDB_4_0,
-    [HAMMERDB_4_0, HAMMERDB_4_3, HAMMERDB_4_5],
+    [HAMMERDB_4_0, HAMMERDB_4_3, HAMMERDB_4_5, HAMMERDB_4_12],
     'Version of the hammerdb. Currently supported patched '
-    'version of 4.0 and the public versions of 4.3 and 4.5.',
+    'version of 4.0 and the public versions of 4.3, 4.5 and 4.12.',
 )
 
 HAMMERDB_SCRIPT = flags.DEFINE_enum(
